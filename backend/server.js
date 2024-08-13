@@ -3,7 +3,6 @@ import config from "./config";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import userRoute from "./routes/userRoute";
 import productRoute from "./routes/productRoute";
 
 const path = require("path");
@@ -24,7 +23,6 @@ mongoose
 const app = express();
 
 app.use(bodyParser.json());
-app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 
 // Serve static assests if in production
