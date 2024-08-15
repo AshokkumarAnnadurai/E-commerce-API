@@ -2,7 +2,7 @@ import express from "express";
 import Product from "../models/productModel";
 import { isAuth, isAdmin } from "../util";
 
-const router = express.Router();
+const   router = express.Router();
 
 router.get("/", async (req, res) => {
     const products = await Product.find({});
