@@ -11,11 +11,10 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     const product = await Product.findOne({ _id: req.params.id });
     if (product) {
-        res.send(product);
+       return res.json(product);
     } else {
-        res.status(404).send({ message: "404 product not found" });
+        return res.status(404).send({ message: "404 product not found" });
     }
-    res.send(product);
 });
 
 router.post("/", async (req, res) => {

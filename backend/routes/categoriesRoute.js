@@ -5,7 +5,6 @@ const router = express.Router()
 
 router.get("/" , async (req , res)=>{
     const categories = await category.find({})
-    console.log("🚀 ~ router.get ~ categories:", categories)
     res.send(categories)
 })
 
